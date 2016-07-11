@@ -77,6 +77,11 @@ module.exports = function imageResizer(_options) {
 
         }
 
+        if (options.scale) {
+          gmfile = gmfile
+            .resize(size.width * options.scale, size.height * options.scale);
+        }
+        
         if (options.format) {
           gmfile = gmfile
             .setFormat(options.format);
